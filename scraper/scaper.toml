@@ -1,0 +1,6 @@
+[[calendars]]
+program = "uw-software-engineering"
+url = "https://ugradcalendar.uwaterloo.ca/page/ENG-Software-Engineering"
+first_term_year = 2018
+streams = ["8"]
+pd = ["PD 20", "PD 21", "PD 10", "PD Elective", "PD Elective"]

@@ -1,0 +1,7 @@
+CREATE TABLE term_courses (
+  id SERIAL PRIMARY KEY,
+  term_id INTEGER NOT NULL,
+  name VARCHAR NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  FOREIGN KEY (term_id) REFERENCES terms (id)
+)

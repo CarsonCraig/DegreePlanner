@@ -1,0 +1,275 @@
+{
+  "terms": [
+    {
+      "name": "1A F18",
+      "courses": [
+        {
+          "name": "CS 137"
+        },
+        {
+          "name": "ECE 105"
+        },
+        {
+          "name": "MATH 115"
+        },
+        {
+          "name": "MATH 117"
+        },
+        {
+          "name": "MATH 135"
+        },
+        {
+          "name": "SE 101"
+        }
+      ]
+    },
+    {
+      "name": "1B W19",
+      "courses": [
+        {
+          "name": "SE 102"
+        },
+        {
+          "name": "CS 138"
+        },
+        {
+          "name": "ECE 106"
+        },
+        {
+          "name": "ECE 124"
+        },
+        {
+          "name": "ECE 140"
+        },
+        {
+          "name": "MATH 119"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 1",
+      "courses": [
+        {
+          "name": "COOP 1"
+        },
+        {
+          "name": "PD 20"
+        }
+      ]
+    },
+    {
+      "name": "2A F19",
+      "courses": [
+        {
+          "name": "SE 201"
+        },
+        {
+          "name": "CHE 102"
+        },
+        {
+          "name": "CS 241"
+        },
+        {
+          "name": "ECE 222"
+        },
+        {
+          "name": "SE 212"
+        },
+        {
+          "name": "STAT 206"
+        },
+        {
+          "name": "Communication Elective"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 2",
+      "courses": [
+        {
+          "name": "COOP 2"
+        },
+        {
+          "name": "PD 21"
+        }
+      ]
+    },
+    {
+      "name": "2B S19",
+      "courses": [
+        {
+          "name": "SE 202"
+        },
+        {
+          "name": "CS 240"
+        },
+        {
+          "name": "CS 247"
+        },
+        {
+          "name": "MSCI 261"
+        },
+        {
+          "name": "MATH 213"
+        },
+        {
+          "name": "MATH 239"
+        },
+        {
+          "name": "Elective"
+        },
+        {
+          "name": "WKRPT 200"
+        },
+        {
+          "name": "TPM 000"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 3",
+      "courses": [
+        {
+          "name": "COOP 3"
+        },
+        {
+          "name": "PD 10"
+        }
+      ]
+    },
+    {
+      "name": "3A W20",
+      "courses": [
+        {
+          "name": "SE 301"
+        },
+        {
+          "name": "CS 341"
+        },
+        {
+          "name": "CS 349"
+        },
+        {
+          "name": "SE 350"
+        },
+        {
+          "name": "SE 465"
+        },
+        {
+          "name": "Elective"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 4",
+      "courses": [
+        {
+          "name": "COOP 4"
+        },
+        {
+          "name": "PD Elective"
+        }
+      ]
+    },
+    {
+      "name": "3B F20",
+      "courses": [
+        {
+          "name": "SE 302"
+        },
+        {
+          "name": "CS 343"
+        },
+        {
+          "name": "CS 348"
+        },
+        {
+          "name": "SE 380"
+        },
+        {
+          "name": "SE 390"
+        },
+        {
+          "name": "SE 464"
+        },
+        {
+          "name": "Elective"
+        },
+        {
+          "name": "WKRPT 300"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 5",
+      "courses": [
+        {
+          "name": "COOP 5"
+        },
+        {
+          "name": "PD Elective"
+        }
+      ]
+    },
+    {
+      "name": "4A S20",
+      "courses": [
+        {
+          "name": "SE 401"
+        },
+        {
+          "name": "ECE 358"
+        },
+        {
+          "name": "SE 463"
+        },
+        {
+          "name": "SE 490"
+        },
+        {
+          "name": "Elective 1"
+        },
+        {
+          "name": "Elective 2"
+        },
+        {
+          "name": "WKRPT 400"
+        }
+      ]
+    },
+    {
+      "name": "Co-op 6",
+      "courses": [
+        {
+          "name": "COOP 6"
+        }
+      ]
+    },
+    {
+      "name": "4B W21",
+      "courses": [
+        {
+          "name": "SE 402"
+        },
+        {
+          "name": "SE 491"
+        },
+        {
+          "name": "Elective 1"
+        },
+        {
+          "name": "Elective 2"
+        },
+        {
+          "name": "Elective 3"
+        },
+        {
+          "name": "Elective 4"
+        },
+        {
+          "name": "Elective 5"
+        }
+      ]
+    }
+  ]
+}

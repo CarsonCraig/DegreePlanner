@@ -1,0 +1,18 @@
+# https://rocket.rs/guide/configuration/#environment-variables
+
+# Use ROCKET_ENV=production to change environment
+
+[development]
+address = "local.uwcourseplan.com"
+port = 8000
+log = "normal"
+
+[staging]
+address = "0.0.0.0"
+port = 80
+log = "normal"
+
+[production]
+address = "0.0.0.0"
+port = 80
+log = "critical"

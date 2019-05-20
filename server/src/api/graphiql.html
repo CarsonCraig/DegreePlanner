@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UW Course Plan | GraphQL Explorer</title>
+
+  <meta name="google-signin-client_id" content="{google_client_id}">
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.10.2/graphiql.css">
+  <style>
+  html, body, #app {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #signin {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #signin-error {
+    color: red;
+    padding: 0 10px;
+  }
+
+  #navbar {
+    display: none; /* should be display: flex */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #424242;
+  }
+
+  .app-title {
+    font-size: 1.1em;
+    color: #b3e5fc;
+  }
+  </style>
+</head>
+<body>
+  <div id="signin">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div id="signin-error"></div>
+  </div>
+
+  <div id="navbar">
+    <span class="app-title">UW CoursePlan GraphQL Explorer</span>
+    <button href="#" onclick="signOut();">Sign out</button>
+  </div>
+
+  <div id="app"></div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/graphiql/0.11.11/graphiql.min.js"></script>
+
+  <script>
+  var GRAPHQL_URL = '{graphql_url}';
+  var AUTH_TOKEN = null;
+
+  function graphQLFetcher(params) {
+    return fetch(GRAPHQL_URL, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${AUTH_TOKEN}`,
+      },
+      credentials: 'include',
+      body: JSON.stringify(params)
+    }).then(function (response) {
+      return response.text();
+    }).then(function (body) {
+      try {
+        return JSON.parse(body);
+      } catch (error) {
+        return body;
+      }
+    });
+  }
+
+  function startGraphiQL() {
+    ReactDOM.render(
+      React.createElement(GraphiQL, {fetcher: graphQLFetcher}),
+      document.querySelector('#app')
+    );
+  }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+  function onSignIn(googleUser) {
+    document.getElementById('signin-error').innerHTML = "";
+
+    var profile = googleUser.getBasicProfile();
+    fetch('/google_auth', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: profile.getName(),
+        email: profile.getEmail(),
+        googleId: profile.getId(),
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json()).then(auth => {
+      window.AUTH_TOKEN = auth.token;
+      if (!AUTH_TOKEN) {
+        document.getElementById('signin-error').innerHTML = "Authentication failed!";
+        return;
+      }
+      // Remove login button
+      document.getElementById("signin").outerHTML = "";
+      // Show navbar + logout button
+      document.getElementById("navbar").style.display = "flex";
+
+      // Start GraphiQL app
+      startGraphiQL();
+    });
+  }
+
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.info('User signed out.');
+      // Reset the page
+      location.reload();
+    });
+  }
+  </script>
+</body>
+</html>

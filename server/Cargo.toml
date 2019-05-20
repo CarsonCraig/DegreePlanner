@@ -1,0 +1,26 @@
+[package]
+name = "uwcourseplan"
+version = "0.1.0"
+authors = ["Sunjay Varma <varma.sunjay@gmail.com>"]
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+diesel = { version = "1.0", features = ["postgres", "chrono", "r2d2"] }
+dotenv = "0.13"
+chrono = { version = "0.4", features = ["serde"] }
+juniper = "0.10"
+juniper_rocket = "0.1"
+rocket = "0.3"
+rocket_codegen = "0.3"
+rocket_cors = "0.3"
+# This can be updated after rocket releases a new version that uses the latest
+# ring crate. Ring uses native libraries so there cannot be multiple copies
+# in the dependency tree.
+jsonwebtoken = "2.0"
+
+[dependencies.rocket_contrib]
+version = "0.3"
+default-features = false
+features = ["json"]
